@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  &-unfilled {
+  &__wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -13,113 +13,51 @@
     border-radius: 40px;
     margin-right: 30px;
     margin-bottom: 30px;
-    h2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 40px;
-      font-size: 28px;
-      font-weight: 400;
-      padding: 0 20px;
-      height: 60px;
-      color: #463d3d;
-      background-color: #efe2e2;
-    }
-    &__layout {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 0;
-    }
-    &__taks {
-      display: flex;
-      align-items: center;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 40px;
-        font-size: 24px;
-        font-weight: 400;
-        padding: 0 20px;
-        height: 60px;
-        color: #463d3d;
-        background-color: #efe2e2;
-        margin-right: 10px;
-      }
-    }
-    &__button {
-      &--plus {
-        display: contents;
-        img {
-          cursor: pointer;
-          margin-right: 10px;
-          width: 60px;
-          height: 60px;
-        }
-      }
-      &--remove {
-        display: contents;
-        img {
-          cursor: pointer;
-          width: 60px;
-          height: 60px;
-        }
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
-  &-completed {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    font-size: 28px;
+    font-weight: 400;
+    padding: 0 20px;
+    height: 60px;
+    color: #463d3d;
+    background-color: #efe2e2;
+  }
+  &__ream {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 25px 50px;
-    background-color: #819f9e;
-    border-radius: 40px;
-    margin-bottom: 30px;
-    h2 {
+    padding: 0;
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+    p {
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 40px;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 400;
       padding: 0 20px;
       height: 60px;
       color: #463d3d;
       background-color: #efe2e2;
     }
-    &__layout {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 0;
-    }
-    &__taks {
-      display: flex;
-      align-items: center;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 40px;
-        font-size: 24px;
-        font-weight: 400;
-        padding: 0 20px;
-        height: 60px;
-        color: #463d3d;
-        background-color: #efe2e2;
-        margin-right: 10px;
-      }
-    }
-    &__button {
-      &--remove {
-        display: contents;
-        img {
-          cursor: pointer;
-          width: 60px;
-          height: 60px;
-        }
-      }
+  }
+  &__button {
+    background: none;
+    border: none;
+    img {
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
     }
   }
 }
