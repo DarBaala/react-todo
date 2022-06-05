@@ -3,10 +3,7 @@ import React from "react";
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <input
-        className="header__input"
-        placeholder="Хотите добавить что-то в список дел?"
-      />
+      <input className="header__input" placeholder="Добавить дело..." />
       <button className="header__button">
         <img src="/img/plus-button.svg" alt="Button: plus" />
       </button>

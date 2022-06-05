@@ -12,20 +12,32 @@
     padding: 14px 30px;
     border-radius: 40px;
     margin-right: 20px;
+    @media (max-width: 760px) {
+      width: 250px;
+      font-size: 20px;
+    }
     &:focus {
       outline: none;
     }
     &::placeholder {
-      text-align: left;
       font-size: 32px;
       color: #ececec;
+      @media (max-width: 760px) {
+        font-size: 20px;
+      }
     }
   }
   &__button {
+    display: flex;
+    align-items: center;
     background: none;
     border: none;
     img {
       cursor: pointer;
+      @media (max-width: 760px) {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 }
