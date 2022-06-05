@@ -1,0 +1,15 @@
+@import "./normalize.scss";
+@import "./components/all";
+
+* {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+body {
+  background-color: #5b6d6f;
+}
+
+.container {
+  margin: auto;
+  width: 1020px;
+}
