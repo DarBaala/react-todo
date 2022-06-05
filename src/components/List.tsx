@@ -23,7 +23,7 @@ const List = () => {
           <li className="list-completed__taks">
             <p>Сходить к врачу</p>
             <button className="list-completed__button--remove">
-              <img src="./img/remove-button.svg" alt="Button: remove" />
+              <img src="/img/remove-button.svg" alt="Button: remove" />
             </button>
           </li>
         </ul>
