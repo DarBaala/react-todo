@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import AppContext from "../context";
+import { Animated } from "react-animated-css";
 
 const List = () => {
-  const { todos, handlerToggle, removeTask, todosComplete } =
+  const { todos, handlerToggle, removeTask, todosComplete, editTask } =
     useContext(AppContext);
 
   return (
@@ -12,21 +13,34 @@ const List = () => {
         {todos.length > 0 ? (
           <ul className="list__ream">
             {todos.map((todo) => (
-              <li key={todo.id} className="list__items">
-                <p>{todo.task}</p>
-                <button
-                  onClick={() => handlerToggle(todo)}
-                  className="list__button"
-                >
-                  <img src="/img/plus-button.svg" alt="Button: plus" />
-                </button>
-                <button
-                  onClick={() => removeTask(todo.id)}
-                  className="list__button"
-                >
-                  <img src="/img/remove-button.svg" alt="Button: remove" />
-                </button>
-              </li>
+              <Animated
+                animationIn="bounceInDown"
+                animationOut="fadeOut"
+                isVisible={true}
+              >
+                <li key={todo.id} className="list__items">
+                  <p>{todo.task}</p>
+
+                  <button
+                    onClick={() => handlerToggle(todo)}
+                    className="list__button"
+                  >
+                    <img src="img/plus-button.svg" alt="Button: plus" />
+                  </button>
+                  <button
+                    onClick={() => editTask(todo)}
+                    className="list__button"
+                  >
+                    <img src="img/pencil-button.svg" alt="Button: pencil" />
+                  </button>
+                  <button
+                    onClick={() => removeTask(todo.id)}
+                    className="list__button"
+                  >
+                    <img src="img/remove-button.svg" alt="Button: remove" />
+                  </button>
+                </li>
+              </Animated>
             ))}
           </ul>
         ) : (
@@ -38,9 +52,21 @@ const List = () => {
         {todosComplete.length > 0 ? (
           <ul className="list__ream">
             {todosComplete.map((todoComp) => (
-              <li key={todoComp.id} className="list__items">
-                <p> {todoComp.task}</p>
-              </li>
+              <Animated
+                animationIn="bounceInDown"
+                animationOut="fadeOut"
+                isVisible={true}
+              >
+                <li key={todoComp.id} className="list__items">
+                  <p> {todoComp.task}</p>
+                  <button
+                    onClick={() => removeTask(todoComp.id)}
+                    className="list__button"
+                  >
+                    <img src="img/remove-button.svg" alt="Button: remove" />
+                  </button>
+                </li>
+              </Animated>
             ))}
           </ul>
         ) : (

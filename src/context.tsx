@@ -15,6 +15,7 @@ export interface AppContextInterface {
   handlerToggle: (todo: TaskType) => void;
   removeTask: (id: string) => void;
   addTask: (userInput: string) => void;
+  editTask: (todo: TaskType) => void;
 }
 const AppContext = createContext<AppContextInterface>(
   {} as AppContextInterface

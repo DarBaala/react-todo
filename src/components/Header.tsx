@@ -16,6 +16,7 @@ const Header: React.FC = () => {
       addTask(userInput);
       setUserInput("");
     } else {
+      event.preventDefault();
       alert("Пустое поле !");
     }
   };
@@ -31,7 +32,7 @@ const Header: React.FC = () => {
           placeholder="Добавить дело..."
         />
         <button className="header__button">
-          <img src="/img/plus-button.svg" alt="Button: plus" />
+          <img src="img/plus-button.svg" alt="Button: plus" />
         </button>
       </form>
     </header>
