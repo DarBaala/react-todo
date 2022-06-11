@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AppContext from "./context";
+import { TaskType } from "./context";
 
 import Header from "./components/Header";
 import List from "./components/List";
@@ -8,12 +9,12 @@ import "./sass/app.scss";
 
 function App() {
   const [userInput, setUserInput] = useState<string>("");
-  const [todos, setTodos] = useState<string[]>([]);
-  const [todosComplete, setTodosComplete] = useState<string[]>([]);
+  const [todos, setTodos] = useState<TaskType[]>([]);
+  const [todosComplete, setTodosComplete] = useState<TaskType[]>([]);
 
   const addTask = (userInput: string) => {
     if (userInput) {
-      const newItem: { id: string; task: string } = {
+      const newItem = {
         id: Math.random().toString(36).substring(1, 9),
         task: userInput,
       };
@@ -25,8 +26,8 @@ function App() {
     setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
-  const handlerToggle = (todo: string[], id) => {
-    setTodosComplete([...todosComplete, todo]);
+  const handlerToggle = (todo, id) => {
+    setTodosComplete([...todosComplete, todo.task]);
     setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 

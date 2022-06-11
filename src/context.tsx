@@ -1,12 +1,18 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
+export interface TaskType {
+  id: string;
+  task: string;
+  length?: number;
+}
+
 export interface AppContextInterface {
   userInput: string;
   setUserInput: Dispatch<SetStateAction<string>>;
-  todos: string[];
-  setTodos: Dispatch<SetStateAction<string[]>>;
-  todosComplete: string[];
-  handlerToggle: (id: string) => void;
+  todos: TaskType[];
+  setTodos: Dispatch<SetStateAction<TaskType[]>>;
+  todosComplete: TaskType[];
+  handlerToggle: (todo: TaskType, id: string) => void;
   removeTask: (id: string) => void;
   addTask: (userInput: string) => void;
 }
