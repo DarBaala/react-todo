@@ -26,9 +26,9 @@ function App() {
     setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
-  const handlerToggle = (todo, id) => {
-    setTodosComplete([...todosComplete, todo.task]);
-    setTodos([...todos.filter((todo) => todo.id !== id)]);
+  const handlerToggle = (todo: TaskType) => {
+    setTodosComplete([...todosComplete, todo]);
+    setTodos([...todos.filter((todos) => todos.id !== todo.id)]);
   };
 
   return (

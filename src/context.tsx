@@ -12,7 +12,7 @@ export interface AppContextInterface {
   todos: TaskType[];
   setTodos: Dispatch<SetStateAction<TaskType[]>>;
   todosComplete: TaskType[];
-  handlerToggle: (todo: TaskType, id: string) => void;
+  handlerToggle: (todo: TaskType) => void;
   removeTask: (id: string) => void;
   addTask: (userInput: string) => void;
 }

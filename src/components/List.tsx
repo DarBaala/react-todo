@@ -15,7 +15,7 @@ const List = () => {
               <li key={todo.id} className="list__items">
                 <p>{todo.task}</p>
                 <button
-                  onClick={() => handlerToggle(todo, todo.id)}
+                  onClick={() => handlerToggle(todo)}
                   className="list__button"
                 >
                   <img src="/img/plus-button.svg" alt="Button: plus" />
@@ -40,9 +40,6 @@ const List = () => {
             {todosComplete.map((todoComp) => (
               <li key={todoComp.id} className="list__items">
                 <p> {todoComp.task}</p>
-                {/* <button className="list__button">
-                  <img src="/img/remove-button.svg" alt="Button: remove" />
-                </button> */}
               </li>
             ))}
           </ul>
